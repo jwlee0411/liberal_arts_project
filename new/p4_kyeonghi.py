@@ -41,12 +41,12 @@ def show(reg_semester, font_path):
 
     st.subheader('교양과목 수')
     st.bar_chart(uni_subset.groupby('개설연도').count()['과목명'])
-    ex_vac_session = uni_subset[uni_subset['개설연도'].isin(reg_semester)]
-    st.line_chart(ex_vac_session.groupby('개설연도').count()['과목명'])
 
-    st.subheader('교양과목 개설학과')
-    st.bar_chart(uni_subset.groupby('개설학과').count()['과목명'])
-    ex_vac_session = uni_subset[uni_subset['개설연도'].isin(reg_semester)]
+
+    st.subheader('교양영역 별 2023년 개설과목 수')
+    st.bar_chart(
+        uni_subset[uni_subset['개설연도'].isin(['2023', '2023-2', '2023-1', '2023-겨울', '2023-여름'])].groupby('교양영역')[
+            ['개설연도', '과목명']].count()['과목명'])
 
     st.subheader('수집 방법')
     st.write("""

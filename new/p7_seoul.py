@@ -62,30 +62,20 @@ def show(reg_semester, font_path):
 
 
 
-    st.subheader('교양과목 수')
-    st.bar_chart(uni_subset.groupby('개설연도').count()['과목명'])
-    ex_vac_session = uni_subset[uni_subset['개설연도'].isin(reg_semester)]
-    st.line_chart(ex_vac_session.groupby('개설연도').count()['과목명'])
 
     st.subheader('교양과목 개설학과')
     st.bar_chart(uni_subset.groupby('개설학과').count()['과목명'])
     ex_vac_session = uni_subset[uni_subset['개설연도'].isin(reg_semester)]
 
-    st.subheader('SW 교육팀 개설 교양과목 추이')
-    st.line_chart(ex_vac_session[ex_vac_session['개설연도'].isin(
-        ['2020-2', '2021-1', '2021-2', '2022-1', '2022-2', '2023-1', '2023-2'])].groupby(['개설연도', '개설학과'])[
-                      '과목명'].count().unstack('개설학과'), y=['SW교육팀'])
-
-
-
 
     st.write(f"""
-                출처: 숭실대학교 유세인트 [https://saint.ssu.ac.kr/](https://saint.ssu.ac.kr/)
+                서울대학교 원본 데이터
+출처: 서울대학교 기초교육원 https://liberaledu.snu.ac.kr/
 
-                ### 수집 방법
+### 수집 방법
 
-                1. 숭실대학교 유세인트 접속
-                2. 학사관리 - 수강신청/교과과정 - 강의시간표 - 교양필수/교양선택 - 학년도 및 학기 선택
-                3. 엑스포트
+1. 서울대학교 기초교육원 홈페이지 접속
+2. 상단 메뉴 교양교육과정 - 영역 및 교과목 - 영역별 교과목 선택
+3. 각 분류별 테이블을 엑셀로 복사/붙여넣기 하거나, 자동화 웹 스크래핑 프로그램으로 수집
                 """)
 

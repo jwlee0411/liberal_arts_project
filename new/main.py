@@ -5,12 +5,15 @@ import matplotlib.pyplot as plt
 import plotly.express as px
 
 import p0_home, p1_nutshell, p2_soongsil, p3_kaist, p4_kyeonghi, p5_korea, p6_sogang, p7_seoul
+import p8_seoul_city, p9_seongkyunkwan, p10_yonsei, p11_ewha, p12_joongang, p13_pohang, p14_hanyang, p15_hufs
+import p16_fin, p17_ref
 
 st.sidebar.title("서울시 주요대학 교양교육 데이터 분석")
 
 
 menu = ["개요", "종합 분석", "숭실대학교", "KAIST","경희대학교", "고려대학교", "서강대학교", "서울대학교", "서울시립대학교", "성균관대학교", "연세대학교", "이화여자대학교"
         , "중앙대학교", "포항공과대학교", "한양대학교", "한국외국어대학교", "결론", "부록 및 참고자료"]
+
 choice = st.sidebar.selectbox("메뉴", menu)
 
 reg_semester = ['2003-1', '2003-2', '2004-1', '2004-2', '2005-1', '2005-2',
@@ -47,7 +50,7 @@ elif choice == "성균관대학교":
 elif choice == "연세대학교":
     p10_yonsei.show(reg_semester, font_path)
 elif choice == "이화여자대학교":
-    p11_iwha.show(reg_semester, font_path)
+    p11_ewha.show(reg_semester, font_path)
 elif choice == "중앙대학교":
     p12_joongang.show(reg_semester, font_path)
 elif choice == "포항공과대학교":
@@ -55,11 +58,11 @@ elif choice == "포항공과대학교":
 elif choice == "한양대학교":
     p14_hanyang.show(reg_semester, font_path)
 elif choice == "한국외국어대학교":
-    p15_seoul_city.show(reg_semester, font_path)
+    p15_hufs.show(reg_semester, font_path)
 elif choice == "결론":
-    p16_fin.show(reg_semester, font_path)
+    p16_fin.show()
 elif choice == "부록 및 참고자료":
-    p17_ref.show(reg_semester, font_path)
+    p17_ref.show()
 else:
     p0_home.show()
 
