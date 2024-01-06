@@ -104,8 +104,6 @@ sortedcontainers==2.4.0
 soupsieve==2.3.2.post1
 SQLAlchemy==2.0.23
 sqlparse==0.4.2
-# Editable install with no version control (ssudy-web==0.4)
--e c:\users\sunsil\appdata\local\programs\python\python310\lib\site-packages
 streamlit==1.29.0
 template==0.7.6
 tenacity==8.2.3
