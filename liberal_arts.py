@@ -15,6 +15,10 @@ import chungang
 import hufs
 import korea
 
+st.sidebar.title("사이드바 제목")
+st.sidebar.markdown("[대학별 종합](#3132a910)")
+
+
 st.title('서울시 주요대학 교양교육 데이터')
 
 @st.cache_data
@@ -41,6 +45,7 @@ st.bar_chart(data[data['개설연도'].isin(['2023-2', '2023-1', '2023'])].group
 
 if st.checkbox('원본 데이터 확인'):
     st.write(data)
+
 
 for uni in ['숭실대학교', 'KAIST', '경희대학교', '고려대학교', '서강대학교', '서울대학교', '서울시립대학교', '성균관대학교',
        '연세대학교', '이화여대', '중앙대학교', '포항공과대학교', '한양대학교']:
