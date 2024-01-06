@@ -10,33 +10,20 @@ import plotly.express as px
 import main
 from PIL import Image
 
-def show():
+def show(reg_semester, font_path):
 
     data = main.load_data()
 
-    # 나눔글꼴 경로 설정
-    font_path = './res/gyeonggi_medium.ttf'
-
-    # 폰트 이름 가져오기
-    font_name = fm.FontProperties(fname=font_path).get_name()
-
-    # 폰트 설정
-    plt.rc('font', family=font_name)
 
 
-    reg_semester = ['2003-1', '2003-2', '2004-1', '2004-2', '2005-1', '2005-2',
-       '2006-1', '2006-2', '2007-1', '2007-2', '2008-1', '2008-2',
-       '2009-1', '2009-2', '2010-1', '2010-2', '2011-1', '2011-2',
-       '2012-1', '2012-2', '2013-1', '2013-2', '2014-1', '2014-2',
-       '2015-1', '2015-2', '2016-1', '2016-2', '2017-1', '2017-2',
-       '2018-1', '2018-2', '2019-1', '2019-2', '2020-1', '2020-2',
-       '2021-1', '2021-2', '2022-1', '2022-2', '2023-1', '2023-2', *[str(y) for y in range(2008, 2024)]]
 
-    st.header('종합 분석', divider='rainbow')
+
+
+    st.title('종합 분석')
 
 
     # 2023년 개설 교양과목 수
-    st.subheader('2023년 개설 교양과목 수')
+    st.header('2023년 개설 교양과목 수')
     st.write("일부 대학은 교양필수 과목 데이터만 수집되어, 데이터 해석에 주의바람")
 
     st.bar_chart(data[data['개설연도'].isin(['2023-2', '2023-1', '2023', '2023-여름', '2023-겨울'])].groupby('대학교').count()['과목명'])
