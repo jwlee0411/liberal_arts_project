@@ -64,18 +64,16 @@ def show(reg_semester, font_path):
         uni_subset[uni_subset['개설연도'].isin(['2023', '2023-2', '2023-1', '2023-겨울', '2023-여름'])].groupby('교양영역')[
             ['개설연도', '과목명']].count()['과목명'])
 
-    #
-    # st.subheader('학과 별 2023년 개설과목 수')
-    # st.bar_chart(
-    #     uni_subset[uni_subset['개설연도'].isin(['2023', '2023-2', '2023-1', '2023-겨울', '2023-여름'])].groupby('개설학과')[
-    #         ['개설연도', '과목명']].count()['과목명'])
-
-    st.write(f"""
-    #### 수집 방법
-       출처: [한양대학교 수강신청 포털 수강편람](https://portal.hanyang.ac.kr/sugang/sulg.do#!UDMxMDI3OCRAXnN1Z2FuZy8kQF4wJEBeTTAwNjYzMSRAXuyImOqwle2OuOuejCRAXk0wMDY2MzEkQF5lOTA2ODU5ODUyNGUwMDRhNGFmNmQ5NmQzNDQxMGZhNTY3MDVlNzZiYjJmN2ZjMmRmMzU3Mjk0NzFiMGYzYjQ1IA==!)
-        
-        1. 한양대학교 수강신청 포털 - 상단 메뉴 수강편람 - 조건 검색
-        2. 조건검색 후 엑셀 다운로드
-
+    st.write("""
+                출처: 한양대학교 수강신청 포털 수강편람
+    https://portal.hanyang.ac.kr/sugang/sulg.do#!UDMxMDI3OCRAXnN1Z2FuZy8kQF4wJEBeTTAwNjYzMSRAXuyImOqwle2OuOuejCRAXk0wMDY2MzEkQF5lOTA2ODU5ODUyNGUwMDRhNGFmNmQ5NmQzNDQxMGZhNTY3MDVlNzZiYjJmN2ZjMmRmMzU3Mjk0NzFiMGYzYjQ1IA==!
                 """)
+
+    st.subheader('수집 방법')
+
+    st.write("""
+            1. 한양대학교 수강신청 포털 - 상단 메뉴 수강편람 - 조건 검색
+    2. 조건검색 후 엑셀 다운로드
+            """)
+
 

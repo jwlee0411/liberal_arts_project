@@ -13,11 +13,23 @@ from PIL import Image
 def show(reg_semester, font_path):
     st.title('이화여자대학교')
     st.write("""
-      데이터가 왜 안뜨지 이거
+      수정완료
          """)
 
     data = main.load_data()
-    uni_subset = data[data['대학교'] == '이화여자대학교']
+    uni_subset = data[data['대학교'] == '이화여대']
+
+    # Word Cloud
+    subjects_data = data[data['대학교'].isin(['이화여대'])]['과목명']
+    all_subjects_text = ' '.join(subjects_data.astype(str).tolist())
+    wordcloud = WordCloud(width=800, height=400, background_color='white', font_path=font_path).generate(
+        all_subjects_text)
+    st.subheader('개설 교양과목 키워드 Word Cloud')
+    fig, ax = plt.subplots()
+    ax.imshow(wordcloud, interpolation='bilinear')
+    ax.axis('off')
+    st.pyplot(fig)
+
 
     st.subheader('교양과목 개설학과')
     st.bar_chart(uni_subset.groupby('개설학과').count()['과목명'])
