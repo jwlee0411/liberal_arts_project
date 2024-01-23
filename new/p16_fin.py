@@ -1,10 +1,7 @@
 import streamlit as st
 from PIL import Image
 def show():
-    st.title("개요")
-    st.write("이 웹사이트는 숭실교양공동체 2기 데이터사이언스팀에서 제작했습니다.")
-    img = Image.open('res/p0_1.png')
-    st.image(img)
-
-    st.subheader('소스코드')
-    st.write("[Github](https://github.com/jwlee0411/liberal_arts_project)")
+    st.title("결론")
+    st.write("이와 같은 데이터 수집 과정을 통해 다양한 대학의 교양교육 과정에 대한 포괄적인 이해를 얻을 수 있었으며, 이는 향후 대학 교육 커리큘럼 개발 및 개선에 중요한 기초 자료로 활용될 수 있을 것입니다. 대학 교양교육의 현재 상태와 변화 추세를 이해함으로써, 학문 간 융합 및 창의적 사고를 강조하는 현대 교육의 방향성을 보다 명확하게 파악할 수 있게 되었습니다.
+")
+  
