@@ -11,6 +11,7 @@ import main
 from PIL import Image
 
 def show(reg_semester, font_path):
+    data = main.load_data()
     st.title('숭실대학교')
     st.write("""
         숭실대학교는 최근 10년 내 4회 이상 개편이 이루어질 정도로 적극적으로 교양교육체계 개편을 모색해왔다. 건학이념을 기반으로 교양교육 체계가 특징이며, 타 학교와 가장 큰 차이점은 기독교와 통일 관련 과목이다.
@@ -199,7 +200,7 @@ def show(reg_semester, font_path):
 
         """)
 
-    data = main.load_data()
+
     uni_subset = data[data['대학교'] == '숭실대학교']
 
     # Word Cloud
@@ -268,8 +269,7 @@ def show(reg_semester, font_path):
 
 
     st.write(f"""
-                출처: 숭실대학교 유세인트 [https://saint.ssu.ac.kr/](https://saint.ssu.ac.kr/)
-
+                
                 ### 수집 방법
 
                 1. 숭실대학교 유세인트 접속
