@@ -63,9 +63,12 @@ def show(reg_semester, font_path):
 
     st.write(f"""
                 출처: 성균관대학교 학부대학 홈페이지 https://hakbu.skku.edu/hakbu/index.do
+                
+                성균관대학교 정보광장 https://kingoinfo.skku.edu/gaia/nxui/outdex.html
 
                 ### 수집 방법
-
-                ㅁ?ㄹ
+                1. 성균관대학교 정보광장 접속 (성균관대학교 계정이 있어야 접근이 가능하나, 위 링크로 접근하면 강좌목록 페이지에 로그인하지 않고 접근 가능)
+                2. 각 과목별 강좌목록 페이지를 수기 또는 웹 스크래핑 프로그램으로 수집
+             
                 """)
 

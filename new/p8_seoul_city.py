@@ -65,12 +65,15 @@ def show(reg_semester, font_path):
 
 
     st.write(f"""
-                출처: 숭실대학교 유세인트 [https://saint.ssu.ac.kr/](https://saint.ssu.ac.kr/)
-
+                출처: 서울시립대학교 [https://www.uos.ac.kr/kor/](https://www.uos.ac.kr/)
+                
                 ### 수집 방법
+                
+                1. 상단 메뉴 대학 및 대학원 - 학사 - 전공/교과/교직
+                2. 교과과정 선택
+                3. 교양교과목 다운로드
+                4. HWP 파일에서 교양과목 데이터 수기로 데이터 수집
 
-                1. 숭실대학교 유세인트 접속
-                2. 학사관리 - 수강신청/교과과정 - 강의시간표 - 교양필수/교양선택 - 학년도 및 학기 선택
-                3. 엑스포트
+
                 """)
 
